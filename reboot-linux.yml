@@ -1,7 +1,6 @@
 ---
 # reboot-linux.yml
 
----
 - hosts: all
 
   tasks:
