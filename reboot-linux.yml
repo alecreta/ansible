@@ -1,11 +1,14 @@
 ---
 # reboot-linux.yml
 
+---
 - hosts: all
 
   tasks:
     - name: reboot host
-      shell: /sbin/shutdown -r now
+      shell: sleep 10 && /sbin/shutdown -r now
+      async: 300
+      poll: 0
       become: true
 
     - name: waiting for server booting up
@@ -14,7 +17,7 @@
         host: ''
         port: 22
         delay: 30
-        timeout: 300
+        timeout: 600
         state: started
       become: false
 
