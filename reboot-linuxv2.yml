@@ -3,7 +3,6 @@
 
 
 - name: Do something that requires a reboot when it results in a change.
-  ...
   register: task_result
 
 - name: Reboot immediately if there was a change.
